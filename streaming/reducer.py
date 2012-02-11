@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 
 import sys
-sys.path.append(".")
-
 from pymongo_hadoop import BSONReducer
 
 def reducer(key, values):

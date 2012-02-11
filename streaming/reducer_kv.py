@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 
 import sys
-sys.path.append(".")
-
 from pymongo_hadoop import KeyValueBSONReducer, KeyValueBSONInput
 
 def reducer(key, values):
@@ -13,5 +11,5 @@ def reducer(key, values):
         _sum += v['value']
     return (key, _sum / _count)
 
-
+        
 KeyValueBSONReducer(reducer, input_fh=KeyValueBSONInput())
